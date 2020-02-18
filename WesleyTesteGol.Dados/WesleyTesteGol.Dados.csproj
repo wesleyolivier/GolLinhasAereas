@@ -12,6 +12,7 @@
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -24,7 +25,6 @@
     <MapFileExtensions>true</MapFileExtensions>
     <ApplicationRevision>0</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
@@ -66,45 +66,26 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Airplane.cs">
-      <DependentUpon>AirplanesGol.tt</DependentUpon>
-    </Compile>
-    <Compile Include="AirplanesGol.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>AirplanesGol.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="AirplanesGol.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>AirplanesGol.tt</DependentUpon>
-    </Compile>
-    <Compile Include="AirplanesGol.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>AirplanesGol.edmx</DependentUpon>
+      <DependentUpon>ModeloGolNew.tt</DependentUpon>
     </Compile>
     <Compile Include="IRepository.cs" />
+    <Compile Include="ModeloGolNew.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModeloGolNew.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModeloGolNew.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModeloGolNew.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModeloGolNew.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModeloGolNew.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="AirplanesGol.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>AirplanesGol.Context.cs</LastGenOutput>
-      <DependentUpon>AirplanesGol.edmx</DependentUpon>
-    </Content>
-    <Content Include="AirplanesGol.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>AirplanesGol.edmx</DependentUpon>
-      <LastGenOutput>AirplanesGol.cs</LastGenOutput>
-    </Content>
-    <Content Include="AvioesDatabase.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="AvioesDatabase_log.ldf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <DependentUpon>AvioesDatabase.mdf</DependentUpon>
-    </Content>
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.5.2">
@@ -119,16 +100,14 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <EntityDeploy Include="AirplanesGol.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>AirplanesGol.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="AirplanesGol.edmx.diagram">
-      <DependentUpon>AirplanesGol.edmx</DependentUpon>
-    </None>
     <None Include="App.Config" />
+    <EntityDeploy Include="ModeloGolNew.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ModeloGolNew.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="ModeloGolNew.edmx.diagram">
+      <DependentUpon>ModeloGolNew.edmx</DependentUpon>
+    </None>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
@@ -139,6 +118,25 @@
       <Project>{34811b07-1ce1-4f73-86e9-63fb3e108e86}</Project>
       <Name>WesleyTesteGol.Comum</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="GolMeuDatabase.mdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="GolMeuDatabase_log.ldf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <DependentUpon>GolMeuDatabase.mdf</DependentUpon>
+    </Content>
+    <Content Include="ModeloGolNew.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModeloGolNew.edmx</DependentUpon>
+      <LastGenOutput>ModeloGolNew.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="ModeloGolNew.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModeloGolNew.edmx</DependentUpon>
+      <LastGenOutput>ModeloGolNew.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

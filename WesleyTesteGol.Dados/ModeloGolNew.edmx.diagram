@@ -4,8 +4,8 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="2b0400fd21004503acd86822adb1ed1a" Name="Diagram1" >
-        <EntityTypeShape EntityType="AvioesDatabaseModelo.Airplane" Width="1.5" PointX="0.75" PointY="0.75" />
+      <Diagram DiagramId="1a4587a9796e4f959b2ea29aedf24bbc" Name="Diagram1">
+        <EntityTypeShape EntityType="GolMeuDatabaseModelo.Airplane" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

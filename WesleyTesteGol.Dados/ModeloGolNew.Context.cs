@@ -13,10 +13,10 @@ namespace WesleyTesteGol.Dados
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class AvioesDatabaseEntities : DbContext
+    public partial class ModeloGolNewEntities : DbContext
     {
-        public AvioesDatabaseEntities()
-            : base("name=AvioesDatabaseEntities")
+        public ModeloGolNewEntities()
+            : base("name=ModeloGolNewEntities")
         {
         }
     

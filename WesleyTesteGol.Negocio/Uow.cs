@@ -11,12 +11,11 @@ namespace WesleyTesteGol.Negocio
 {
     public class Uow : IUow
     {
-        private DbContext dbContext;
-        
+        private DbContext dbContext;        
 
         public Uow()
         {
-            this.dbContext = new AvioesDatabaseEntities();
+            this.dbContext = new ModeloGolNewEntities();
         }
 
         public IRepository<Comum.Entidade.POCO.Airplane> Avioes

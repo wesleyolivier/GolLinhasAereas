@@ -11,7 +11,7 @@ namespace WesleyTesteGol.Teste.DadosTeste
         public void TestarRetornoTodos()
         {
             Dados.Repository<Comum.Entidade.POCO.Airplane> air =
-                new Dados.Repository<Comum.Entidade.POCO.Airplane>(new Dados.AvioesDatabaseEntities());
+                new Dados.Repository<Comum.Entidade.POCO.Airplane>(new Dados.ModeloGolNewEntities());
 
             var avioes = air.GetAll().ToList();            
         }
@@ -20,7 +20,7 @@ namespace WesleyTesteGol.Teste.DadosTeste
         public void TestarRetornoPorId()
         {
             Dados.Repository<Comum.Entidade.POCO.Airplane> air =
-                new Dados.Repository<Comum.Entidade.POCO.Airplane>(new Dados.AvioesDatabaseEntities());
+                new Dados.Repository<Comum.Entidade.POCO.Airplane>(new Dados.ModeloGolNewEntities());
 
             var avioes = air.GetById(2);
         }        

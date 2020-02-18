@@ -1,1 +1,7 @@
-1)
+1) Para o front-end foi utilizada a tecnologia MVC (muito forte no mercado);
+
+2) Para o serviço utilizei Api .NET bem estável e sólida;
+
+3) O projeto foi contruido em arquitetura seguindo as boas práticas do mercado;
+
+4) Por ser um projeto simples, não houve a necessidade de utilizar injeção de dependência, o qual eu usaria o Nuget Ninject.

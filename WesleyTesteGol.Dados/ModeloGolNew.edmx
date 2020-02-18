@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="AvioesDatabaseModelo.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="GolMeuDatabaseModelo.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Airplane">
           <Key>
             <PropertyRef Name="Codigo" />
@@ -14,38 +14,39 @@
           <Property Name="QuantidadePassageiros" Type="int" Nullable="false" />
           <Property Name="DataCriacaoRegistro" Type="datetime" Nullable="false" />
         </EntityType>
-        <EntityContainer Name="AvioesDatabaseModeloStoreContainer">
+        <EntityContainer Name="GolMeuDatabaseModeloStoreContainer">
           <EntitySet Name="Airplane" EntityType="Self.Airplane" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
-      </Schema></edmx:StorageModels>
+      </Schema>
+    </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="AvioesDatabaseModelo" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-        <EntityContainer Name="AvioesDatabaseEntities" annotation:LazyLoadingEnabled="true" >
-          <EntitySet Name="Airplane" EntityType="AvioesDatabaseModelo.Airplane" />
-        </EntityContainer>
+      <Schema Namespace="GolMeuDatabaseModelo" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityType Name="Airplane">
           <Key>
             <PropertyRef Name="Codigo" />
           </Key>
-          <Property Name="Codigo" Type="Int32" Nullable="false" />
-          <Property Name="Modelo" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Codigo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Modelo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="QuantidadePassageiros" Type="Int32" Nullable="false" />
           <Property Name="DataCriacaoRegistro" Type="DateTime" Nullable="false" Precision="3" />
         </EntityType>
+        <EntityContainer Name="ModeloGolNewEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Airplane" EntityType="Self.Airplane" />
+        </EntityContainer>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="AvioesDatabaseModeloStoreContainer" CdmEntityContainer="AvioesDatabaseEntities" >
+        <EntityContainerMapping StorageEntityContainer="GolMeuDatabaseModeloStoreContainer" CdmEntityContainer="ModeloGolNewEntities">
           <EntitySetMapping Name="Airplane">
-            <EntityTypeMapping TypeName="AvioesDatabaseModelo.Airplane">
+            <EntityTypeMapping TypeName="GolMeuDatabaseModelo.Airplane">
               <MappingFragment StoreEntitySet="Airplane">
-                <ScalarProperty Name="DataCriacaoRegistro" ColumnName="DataCriacaoRegistro" />
-                <ScalarProperty Name="QuantidadePassageiros" ColumnName="QuantidadePassageiros" />
-                <ScalarProperty Name="Modelo" ColumnName="Modelo" />
                 <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+                <ScalarProperty Name="Modelo" ColumnName="Modelo" />
+                <ScalarProperty Name="QuantidadePassageiros" ColumnName="QuantidadePassageiros" />
+                <ScalarProperty Name="DataCriacaoRegistro" ColumnName="DataCriacaoRegistro" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
