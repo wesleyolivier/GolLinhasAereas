@@ -1,0 +1,59 @@
+﻿@model IEnumerable<WesleyTesteGol.Comum.Entidade.POCO.Airplane>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+    <div class="row">
+        <div class="col-sm-6">
+            <h2>Aeronaves</h2>
+        </div>
+        <div class="col-sm-6">
+            <img src="~/plane.png" width="200px" />
+        </div>
+    </div>
+
+<p>
+    @Html.ActionLink("Criar novo", "Create", null, new { @class = "btn btn-button btn-primary" })
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Codigo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Modelo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.QuantidadePassageiros)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DataCriacaoRegistro)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Codigo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Modelo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.QuantidadePassageiros)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DataCriacaoRegistro)
+        </td>
+        <td>
+            @Html.ActionLink("Editar", "Edit", new { id=item.Codigo }) |
+            @Html.ActionLink("Detalhes", "Details", new {  id=item.Codigo  }) |
+            @Html.ActionLink("Apagar", "Delete", new { id=item.Codigo })
+        </td>
+    </tr>
+}
+
+</table>
